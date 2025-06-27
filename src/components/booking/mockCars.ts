@@ -1,4 +1,4 @@
-import type { CarWithLocation } from './schema'; // Adjust path if schema.ts is elsewhere
+import type { CarWithLocation } from './schemaExtract'; // Adjust path if schema.ts is elsewhere
 
 export const mockCars: CarWithLocation[] = [
   {

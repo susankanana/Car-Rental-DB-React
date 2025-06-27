@@ -3,16 +3,12 @@ import { useForm, type SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Calendar,  Car, User, CheckCircle, ArrowRight, ArrowLeft, Star, Users, Fuel, Settings, Shield, Phone, Mail, Home } from 'lucide-react';
-
-// Adjusted import for types from your schema file
-import type { BookingFormData, CarWithLocation,} from './schema';
-
-// Import the new mock data files
+import type { BookingFormData, CarWithLocation,} from './schemaExtract';
 import { mockCars } from './mockCars'; 
 import { mockLocations } from './mockLocations';
 
 
-// Validation schema (THIS REMAINS UNCHANGED)
+// Validation schema
 const bookingSchema = yup.object({
   carID: yup.number().required('Please select a car'),
   rentalStartDate: yup
@@ -57,10 +53,6 @@ const bookingSchema = yup.object({
   returnLocationID: yup.number().required('Return location is required'),
   
 });
-
-// REMOVE mockCars and mockLocations from here
-// const mockCars: CarWithLocation[] = [...]
-// const mockLocations: TSLocation[] = [...]
 
 const Booking: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);

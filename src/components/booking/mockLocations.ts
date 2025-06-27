@@ -1,4 +1,4 @@
-import type { TSLocation } from './schema'; 
+import type { TSLocation } from './schemaExtract'; 
 
 export const mockLocations: TSLocation[] = [
   {

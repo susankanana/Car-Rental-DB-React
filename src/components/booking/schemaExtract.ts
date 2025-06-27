@@ -18,7 +18,7 @@ export type TSCustomer = { // 'TS' for 'Type for Stored' or 'Type from Server'
   email: string;
   phoneNumber: string | null;
   address: string | null;
-  password: string; // Be careful exposing this on frontend if it's the actual hash
+  password: string; // Should be hashed
   role: "admin" | "user" | null;
   isVerified: boolean | null;
   verificationCode: string | null;
