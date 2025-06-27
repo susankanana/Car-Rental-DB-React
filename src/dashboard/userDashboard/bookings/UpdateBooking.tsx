@@ -1,4 +1,4 @@
-import { bookingAPI, type TBooking } from "../../../../features/bookings/bookingsAPI";
+import { bookingAPI, type TBooking } from "../../../features/bookings/bookingsAPI";
 import { toast } from "sonner";
 
 type UpdateBookingProps = {

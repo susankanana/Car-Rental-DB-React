@@ -15,11 +15,11 @@ const AdminDashboard = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Navbar (fixed height, stacked above drawer) */}
+      {/* Navbar */}
       <Navbar />
 
-      {/* Top bar below navbar */}
-      <div className="flex px-4 py-4 bg-gray-700 items-center lg:pl-72">
+      {/* Top bar */}
+      <div className="flex px-4 py-4 bg-gray-700 items-center">
         <button
           className="mr-4 text-white text-2xl lg:hidden"
           onClick={handleDrawerToggle}
@@ -31,26 +31,25 @@ const AdminDashboard = () => {
         </span>
       </div>
 
+      {/* Main section */}
       <div className="flex flex-1">
-        {/* Drawer for mobile & desktop */}
+        {/* Side Drawer */}
         <aside
           className={`
-            fixed top-0 left-0 z-50 h-screen w-64 bg-gray-800 text-white
-            transform ${drawerOpen ? "translate-x-0" : "-translate-x-full"}
-            transition-transform duration-300 ease-in-out
-            lg:static lg:translate-x-0 lg:block
+            fixed top-0 z-40 w-64 bg-gray-800 text-white
+            ${drawerOpen ? "" : "hidden"} 
+            lg:static lg:block lg:w-64
           `}
+          style={{ minHeight: "100vh" }}
         >
-          {/* Push drawer content down to clear fixed navbar (if needed) */}
-          <div className="relative h-full overflow-y-auto pt-[4.5rem] lg:pt-6 px-4">
-            {/* Close button for small screens */}
+          <div className="h-full">
+            {/* Close button for mobile */}
             <button
               className="absolute top-4 right-4 text-white text-2xl lg:hidden"
               onClick={handleDrawerToggle}
             >
               <IoCloseSharp />
             </button>
-
             <AdminDrawer />
           </div>
         </aside>

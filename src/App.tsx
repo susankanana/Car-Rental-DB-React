@@ -14,10 +14,12 @@ import Profile from './dashboard/adminDashboard/Profile'
 import UserProfile from './dashboard/userDashboard/UserProfile'
 import AdminDashboard from './dashboard/adminDashboard/AdminDashboard'
 import UserDashboard from './dashboard/userDashboard/UserDashboard'
-import UserCars from './dashboard/userDashboard/aside/cars/UserCars'
+import UserCars from './dashboard/userDashboard/cars/UserCars'
 import Cars from './dashboard/adminDashboard/cars/Cars'
 import { Toaster } from 'sonner'
-import UserBookings from './dashboard/userDashboard/aside/bookings/UserBookings'
+import UserBookings from './dashboard/userDashboard/bookings/UserBookings'
+import Analytics from './dashboard/adminDashboard/analytics/Analytics'
+import UserAnalytics from './dashboard/userDashboard/analytics/UserAnalytics'
 
 function App() {
   const isAdmin = useSelector((state: RootState) => state.user.user?.role === 'admin');
@@ -54,7 +56,7 @@ function App() {
       children: [
         {
           path: 'analytics',
-          element: <h1>Analytics</h1>
+          element: <Analytics />
         },
         {
           path: 'cars',
@@ -78,7 +80,7 @@ function App() {
       children: [
         {
           path: 'analytics',
-          element: <h1>Analytics</h1>
+          element: <UserAnalytics />
         },
         {
           path: 'cars',
